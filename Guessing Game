@@ -1,0 +1,33 @@
+
+
+import random
+import time
+x=random.randrange(1,20) #Random number between 1 and 20
+
+print("Hi! What's your name?")
+
+n=input("Name: ")
+print("Hi "+n+", I'm thinking of a number from 1-20. Guess it in the terminal?")
+
+myGuess=input("The number is: ")
+
+while x!=myGuess:
+
+    if x-myGuess>2:
+        print("Higher...")
+        myGuess=input("The number is: ")
+
+    if myGuess-x>2:
+        print("Lower...")
+        myGuess=input("The number is: ")
+
+    if x-myGuess<0 and myGuess-x<=2: #True value is greater than the guess by at least 2
+        print("A little bit lower!")
+        myGuess=input("The number is: ")
+
+    if x-myGuess>0 and x-myGuess<=2: #True value is lower than the guess by at least 2
+        print("A little bit higher!")
+        myGuess=input("The number is: ")
+
+else:
+    print("You got it!")
