@@ -1,7 +1,6 @@
 
 
 import random
-import time
 x=random.randrange(1,20) #Random number between 1 and 20
 
 print("Hi! What's your name?")
