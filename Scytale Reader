@@ -1,9 +1,9 @@
 
 #Lists possible solutions for scytales
 #Sample input: "Tstnhetoecitrrmreeeeatdvrsoeeteanhsloa"
-#Add an "if" for if the plainText isn't long enough. Just to prevent errors
-plainText=input("Unwrap scytale and list all its letters in order here: ")
-start=0 #first letter of the plaintext read
+
+cipher=input("Unwrap scytale and list all its letters in order here: ")
+start=0 #first letter of the cipher read
 skip=3 #Number of letters skipped between outputs
 round=0 #Number of times letters are skipped
 
@@ -11,11 +11,11 @@ print("")
 
 def decipher(): #Print the correct letter and move forward "skip" spaces
 
-    while(start+(skip*round)<=(len(plainText)-1)-skip):
+    while(start+(skip*round)<=(len(cipher)-1)-skip):
         global round
         global start
         global skip
-        print(plainText[start+skip*round]),
+        print(cipher[start+skip*round]),
         round=round+1
 
 
@@ -25,10 +25,10 @@ def decipher(): #Print the correct letter and move forward "skip" spaces
         global start
         global skip
 
-        if(start+(skip*round)>(len(plainText)-1)-skip):
+        if(start+(skip*round)>(len(cipher)-1)-skip):
             global round
             global start
-            print(plainText[start+skip*round])
+            print(cipher[start+skip*round])
             #print("reached")
             round=0
             start=start+1
@@ -37,11 +37,11 @@ def decipher(): #Print the correct letter and move forward "skip" spaces
 decipher()
 
 
-while(start+1==skip and skip<(len(plainText)/3)):
+while(start+1==skip and skip<(len(cipher)/3)):
     global round
     global skip
     global start
-    print(plainText[start+skip*round])
+    print(cipher[start+skip*round])
     print("")
     print("Or:")
     print("")
